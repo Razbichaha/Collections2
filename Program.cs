@@ -18,9 +18,11 @@ namespace Collections2
         static void BoxOffice(Queue <int> queue)
         {
             int moneyInCashRegister = 0;
+            bool isQueue = true;
 
-            foreach(int money in queue)
+            while (isQueue)
             {
+                 isQueue = queue.TryDequeue(out int money);
                 Console.Clear();
 
                 Console.WriteLine("Для проведения операции нажмите enter");
